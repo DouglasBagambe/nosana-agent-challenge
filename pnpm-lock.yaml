@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@ai-sdk/groq':
+        specifier: ^1.2.9
+        version: 1.2.9(zod@3.25.67)
       '@ai-sdk/openai':
         specifier: ^1.3.22
         version: 1.3.22(zod@3.25.67)
@@ -23,6 +26,9 @@ importers:
       '@mastra/memory':
         specifier: ^0.10.3
         version: 0.10.3(@mastra/core@0.10.5(openapi-types@12.1.3)(react@19.1.0)(zod@3.25.67))(react@19.1.0)
+      axios:
+        specifier: ^1.10.0
+        version: 1.10.0
       dotenv:
         specifier: ^16.5.0
         version: 16.5.0
@@ -39,6 +45,9 @@ importers:
       '@nosana/cli':
         specifier: ^1.0.52
         version: 1.0.52(@noble/hashes@1.8.0)(@samchon/openapi@2.5.3)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@5.8.3)(utf-8-validate@5.0.10)
+      '@types/axios':
+        specifier: ^0.14.4
+        version: 0.14.4
       '@types/node':
         specifier: ^24.0.3
         version: 24.0.3
@@ -50,6 +59,12 @@ importers:
         version: 5.8.3
 
 packages:
+
+  '@ai-sdk/groq@1.2.9':
+    resolution: {integrity: sha512-7MoDaxm8yWtiRbD1LipYZG0kBl+Xe0sv/EeyxnHnGPZappXdlgtdOgTZVjjXkT3nWP30jjZi9A45zoVrBMb3Xg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.0.0
 
   '@ai-sdk/openai@1.3.22':
     resolution: {integrity: sha512-QwA+2EkG0QyjVR+7h6FE7iOu2ivNqAVMm9UJZkVxxTk5OIq5fFJDTEI/zICEMuHImTTXR2JjsL6EirJ28Jc4cw==}
@@ -1938,6 +1953,10 @@ packages:
 
   '@types/aws-lambda@8.10.147':
     resolution: {integrity: sha512-nD0Z9fNIZcxYX5Mai2CTmFD7wX7UldCkW2ezCF8D1T5hdiLsnTWDGRpfRYntU6VjTdLQjOvyszru7I1c1oCQew==}
+
+  '@types/axios@0.14.4':
+    resolution: {integrity: sha512-9JgOaunvQdsQ/qW2OPmE5+hCeUB52lQSolecrFrthct55QekhmXEwT203s20RL+UHtCQc15y3VXpby9E7Kkh/g==}
+    deprecated: This is a stub types definition. axios provides its own type definitions, so you do not need this installed.
 
   '@types/bunyan@1.8.11':
     resolution: {integrity: sha512-758fRH7umIMk5qt5ELmRMff4mLDlN+xyYzC+dkPTdKwbSkJFvz6xwyScrytPU0QIBbRRwbiE8/BIg8bpajerNQ==}
@@ -4499,6 +4518,12 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
 snapshots:
+
+  '@ai-sdk/groq@1.2.9(zod@3.25.67)':
+    dependencies:
+      '@ai-sdk/provider': 1.1.3
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.67)
+      zod: 3.25.67
 
   '@ai-sdk/openai@1.3.22(zod@3.25.67)':
     dependencies:
@@ -7293,6 +7318,12 @@ snapshots:
       tslib: 2.8.1
 
   '@types/aws-lambda@8.10.147': {}
+
+  '@types/axios@0.14.4':
+    dependencies:
+      axios: 1.10.0
+    transitivePeerDependencies:
+      - debug
 
   '@types/bunyan@1.8.11':
     dependencies:

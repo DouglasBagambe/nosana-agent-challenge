@@ -1,18 +1,23 @@
 import dotenv from "dotenv";
-import { createOllama } from "ollama-ai-provider";
+import { createGroq } from "@ai-sdk/groq";
 
-// Load environment variables once at the beginning
+// Load environment variables
 dotenv.config();
 
-// Export all your environment variables
-// Defaults to Ollama qwen2.5:1.5b
-// https://ollama.com/library/qwen2.5
-export const modelName = process.env.MODEL_NAME_AT_ENDPOINT ?? "qwen2.5:1.5b";
-export const baseURL = process.env.API_BASE_URL ?? "http://127.0.0.1:11434/api";
+// Export environment variables
+export const modelName =
+  process.env.MODEL_NAME_AT_ENDPOINT ?? "llama-3.1-8b-instant";
+export const baseURL =
+  process.env.API_BASE_URL ?? "https://api.groq.com/openai/v1";
+export const apiKey = process.env.GROQ_API_KEY;
 
-// Create and export the model instance
-export const model = createOllama({ baseURL }).chat(modelName, {
-  simulateStreaming: true,
+// Create Groq provider using AI SDK
+const groq = createGroq({
+  baseURL,
+  apiKey,
 });
+
+// Export the model instance for Mastra
+export const model = groq(modelName);
 
 console.log(`ModelName: ${modelName}\nbaseURL: ${baseURL}`);
