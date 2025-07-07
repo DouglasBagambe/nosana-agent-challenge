@@ -4,7 +4,7 @@
       "id": "agents",
       "args": {
         "gpu": true,
-        "image": "docker.io/douglasab/nosana-agent-challenge:latest",
+        "image": "docker.io/douglasab/nosana-agent-challenge:v1.0.0",
         "expose": [
           {
             "port": 8080
