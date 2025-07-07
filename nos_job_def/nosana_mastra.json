@@ -4,15 +4,13 @@
       "id": "agents",
       "args": {
         "gpu": true,
-        "image": "docker.io/yourusername/agent-challenge:latest",
+        "image": "docker.io/douglasab/nosana-agent-challenge:latest",
         "expose": [
           {
             "port": 8080
           }
         ],
-        "entrypoint": [
-          "/bin/sh"
-        ]
+        "entrypoint": ["/bin/sh"]
       },
       "type": "container/run"
     }
