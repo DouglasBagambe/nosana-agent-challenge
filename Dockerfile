@@ -1,12 +1,9 @@
 FROM ollama/ollama:0.7.0
 
-# Qwen2.5:1.5b - Docker
-ENV API_BASE_URL=http://127.0.0.1:11434/api
-ENV MODEL_NAME_AT_ENDPOINT=qwen2.5:1.5b
-
-# Qwen2.5:32b = Docker
-# ENV API_BASE_URL=http://127.0.0.1:11434/api
-# ENV MODEL_NAME_AT_ENDPOINT=qwen2.5:32b
+# Groq API Configuration
+ENV API_BASE_URL=https://api.groq.com/openai/v1
+ENV MODEL_NAME_AT_ENDPOINT=llama-3.1-8b-instant
+ENV GROQ_API_KEY=
 
 # Install system dependencies and Node.js
 RUN apt-get update && apt-get install -y \
@@ -34,5 +31,5 @@ RUN pnpm run build
 # Override the default entrypoint
 ENTRYPOINT ["/bin/sh", "-c"]
 
-# Start Ollama service and pull the model, then run the app
-CMD ["ollama serve & sleep 5 && ollama pull ${MODEL_NAME_AT_ENDPOINT} && node .mastra/output/index.mjs"]
+# Directly run the application
+CMD ["node .mastra/output/index.mjs"]
